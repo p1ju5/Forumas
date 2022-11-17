@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,6 +19,8 @@ namespace Saitynai
             var host = CreateHostBuilder(args).Build();
 
             using var scope = host.Services.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<Context>();
+            dbContext.Database.Migrate();
             var dbSeeder = (DatabaseSeeder)scope.ServiceProvider.GetService(typeof(DatabaseSeeder));
             await dbSeeder.SeedAsync();
 

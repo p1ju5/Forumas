@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Saitynai.Data.Dtos.Auth;
 using Saitynai.Data.Entities;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace Saitynai.Data
 {
@@ -11,11 +13,16 @@ namespace Saitynai.Data
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
+        private readonly IConfiguration _configuration;
+
+        public Context(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // !!! DON'T STORE THE REAL CONNECTION STRING THE IN PUBLIC REPO !!!
-            // Use secret managers provided by your chosen cloud provider
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=RestDemo");
+            optionsBuilder.UseNpgsql(_configuration.GetValue<string>("PostgreSQLConnectionString"));
         }
     }
 }
