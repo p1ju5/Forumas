@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Saitynai.Auth.Model;
 using Saitynai.Data.Dtos.Categories;
 using Saitynai.Data.Dtos.Posts;
 using Saitynai.Data.Entities;
@@ -17,11 +18,13 @@ namespace Saitynai.Controllers
     {
         private readonly ICategoriesRepository _categoriesRepository;
         private readonly IMapper _mapper;
+        private readonly IAuthorizationService _authorizationService;
 
-        public CategoriesController(ICategoriesRepository categoriesRepository, IMapper mapper)
+        public CategoriesController(ICategoriesRepository categoriesRepository, IMapper mapper, IAuthorizationService authorizationService)
         {
             _categoriesRepository = categoriesRepository;
             _mapper = mapper;
+            _authorizationService = authorizationService;
         }
 
         [HttpGet]
@@ -41,6 +44,7 @@ namespace Saitynai.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult<CategoryDto>> PostAsync(CreateCategoryDto categoryDto)
         {
             var category = _mapper.Map<Category>(categoryDto);
@@ -51,6 +55,7 @@ namespace Saitynai.Controllers
         }
 
         [HttpPut("{categoryId}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult<CategoryDto>> PostAsync(int categoryId, UpdateCategoryDto categoryDto)
         {
             var category = await _categoriesRepository.GetAsync(categoryId);
@@ -64,6 +69,7 @@ namespace Saitynai.Controllers
         }
 
         [HttpDelete("{categoryId}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult> DeleteAsync(int categoryId)
         {
             var category = await _categoriesRepository.GetAsync(categoryId);

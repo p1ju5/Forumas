@@ -17,8 +17,8 @@ namespace Saitynai.Data.Repositories
 
     public class PostsRepository : IPostsRepository
     {
-        private readonly DemoRestContext _context;
-        public PostsRepository(DemoRestContext demoRest)
+        private readonly Context _context;
+        public PostsRepository(Context demoRest)
         {
             _context = demoRest;
         }

@@ -11,7 +11,7 @@ using Saitynai.Data;
 
 namespace Saitynai.Migrations
 {
-    [DbContext(typeof(DemoRestContext))]
+    [DbContext(typeof(Context))]
     [Migration("20221017115516_initial")]
     partial class initial
     {

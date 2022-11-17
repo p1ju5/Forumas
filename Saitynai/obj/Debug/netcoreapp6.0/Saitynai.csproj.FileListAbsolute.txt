@@ -57,3 +57,14 @@ C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\
 C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\obj\Debug\netcoreapp6.0\ref\Saitynai.dll
 C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\AutoMapper.dll
 C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\bin\Debug\netcoreapp6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\obj\Debug\netcoreapp6.0\staticwebassets\msbuild.Saitynai.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\obj\Debug\netcoreapp6.0\staticwebassets\msbuild.build.Saitynai.props
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\obj\Debug\netcoreapp6.0\staticwebassets\msbuild.buildMultiTargeting.Saitynai.props
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\obj\Debug\netcoreapp6.0\staticwebassets\msbuild.buildTransitive.Saitynai.props
+C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\Saitynai\obj\Debug\netcoreapp6.0\staticwebassets.pack.json

@@ -18,9 +18,9 @@ namespace Saitynai.Data.Repositories
 
     public class CategoriesRepository : ICategoriesRepository
     {
-        private readonly DemoRestContext _context;
+        private readonly Context _context;
 
-        public CategoriesRepository(DemoRestContext demoRest)
+        public CategoriesRepository(Context demoRest)
         {
             _context = demoRest;
         }

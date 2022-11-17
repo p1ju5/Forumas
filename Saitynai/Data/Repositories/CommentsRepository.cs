@@ -18,9 +18,9 @@ namespace Saitynai.Data.Repositories
 
     public class CommentsRepository : ICommentsRepository
     {
-        private readonly DemoRestContext _context;
+        private readonly Context _context;
 
-        public CommentsRepository(DemoRestContext demoRest)
+        public CommentsRepository(Context demoRest)
         {
             _context = demoRest;
         }

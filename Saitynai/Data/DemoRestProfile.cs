@@ -1,6 +1,7 @@
 ﻿
 
 using AutoMapper;
+using Saitynai.Data.Dtos.Auth;
 using Saitynai.Data.Dtos.Categories;
 using Saitynai.Data.Dtos.Comments;
 using Saitynai.Data.Dtos.Posts;
@@ -24,6 +25,7 @@ namespace Saitynai.Data
             CreateMap<UpdateCommentDto, Comment>();
             CreateMap<Comment, CommentDto>();
 
+            CreateMap<User, UserDto>();
         }
     }
 }
