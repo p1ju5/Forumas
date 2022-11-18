@@ -98,7 +98,7 @@ namespace Saitynai.Controllers
             var authorizationResult = await _authorizationService.AuthorizeAsync(User, oldComment, PolicyNames.SameUser);
             if (!authorizationResult.Succeeded)
             {
-                return NotFound();
+                return Forbid();
             }
 
             _mapper.Map(commentDto, oldComment);
@@ -124,7 +124,7 @@ namespace Saitynai.Controllers
             var authorizationResult = await _authorizationService.AuthorizeAsync(User, comment, PolicyNames.SameUser);
             if (!authorizationResult.Succeeded)
             {
-                return NotFound();
+                return Forbid();
             }
 
             await _commentsRepository.DeleteAsync(comment);

@@ -84,7 +84,7 @@ namespace Saitynai.Controllers
             var authorizationResult = await _authorizationService.AuthorizeAsync(User, oldPost, PolicyNames.SameUser);
             if (!authorizationResult.Succeeded)
             {
-                return NotFound();
+                return Forbid();
             }
 
             _mapper.Map(postDto, oldPost);
@@ -104,7 +104,7 @@ namespace Saitynai.Controllers
             var authorizationResult = await _authorizationService.AuthorizeAsync(User, post, PolicyNames.SameUser);
             if (!authorizationResult.Succeeded)
             {
-                return NotFound();
+                return Forbid();
             }
 
             await _postsRepository.DeleteAsync(post);
