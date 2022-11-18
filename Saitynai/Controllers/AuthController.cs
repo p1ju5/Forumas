@@ -32,7 +32,7 @@ namespace Saitynai.Controllers
             var user = await _userManager.FindByNameAsync(registerUserDto.UserName);
             if (user != null)
                 // Or more generic error to avoid exposing too much information
-                return BadRequest("pirmas");
+                return BadRequest();
 
             var newUser = new User
             {
@@ -41,7 +41,7 @@ namespace Saitynai.Controllers
             };
             var createUserResult = await _userManager.CreateAsync(newUser, registerUserDto.Password);
             if (!createUserResult.Succeeded)
-                return BadRequest("antras");
+                return BadRequest();
 
             await _userManager.AddToRoleAsync(newUser, UserRoles.User);
             return CreatedAtAction(nameof(Register), _mapper.Map<UserDto>(newUser));
@@ -53,11 +53,11 @@ namespace Saitynai.Controllers
         {
             var user = await _userManager.FindByNameAsync(loginDto.UserName);
             if (user == null)
-                return BadRequest("pirmas");
+                return BadRequest();
 
             var isPasswordValid = await _userManager.CheckPasswordAsync(user, loginDto.Password);
             if (!isPasswordValid)
-                return BadRequest("antras");
+                return BadRequest();
 
             var accessToken = await _tokenManager.CreateAccessTokenAsync(user);
 
