@@ -1,2 +1,0 @@
-C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\reactproject2\obj\Debug\reactproject2.esproj.SuggestedBindingRedirects.cache
-C:\Users\pijus\OneDrive\Stalinis kompiuteris\Saitynai forumas\Saitynai\reactproject2\obj\Debug\reactproject2.esproj.CoreCompileInputs.cache
