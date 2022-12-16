@@ -80,7 +80,7 @@ namespace Saitynai
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            // Shows UseCors with CorsPolicyBuilder.
+            // Shows UseCors with CorsPolicyBuilder
             app.UseCors(builder =>
             {
                 builder.AllowAnyOrigin()
