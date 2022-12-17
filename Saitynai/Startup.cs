@@ -36,17 +36,9 @@ namespace Saitynai
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAllHeaders",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                            .AllowAnyHeader()
-                            .AllowAnyMethod();
-                    });
-            });
+
+            services.AddCors();
+
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<Context>()
                 .AddDefaultTokenProviders();
@@ -82,13 +74,22 @@ namespace Saitynai
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            app.UseCors(builder =>
+                {
+                    builder
+                        .WithOrigins("http://localhost:3000", "https://localhost:3000")
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .WithMethods("GET", "PUT", "POST", "DELETE", "OPTIONS")
+                        .SetPreflightMaxAge(TimeSpan.FromSeconds(3600));
+                }
+            );
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("AllowAllHeaders");
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
