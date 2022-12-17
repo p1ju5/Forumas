@@ -74,22 +74,13 @@ namespace Saitynai
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(builder =>
-                {
-                    builder
-                        .WithOrigins("http://localhost:3000", "https://localhost:3000", "https://octopus-app-v8qm3.ondigitalocean.app")
-                        .SetIsOriginAllowedToAllowWildcardSubdomains()
-                        .AllowAnyHeader()
-                        .AllowCredentials()
-                        .WithMethods("GET", "PUT", "POST", "DELETE", "OPTIONS")
-                        .SetPreflightMaxAge(TimeSpan.FromSeconds(3600));
-                }
-            );
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors("allowAll");
+
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
