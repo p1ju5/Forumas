@@ -83,10 +83,9 @@ namespace Saitynai
             // Shows UseCors with CorsPolicyBuilder
             app.UseCors(builder =>
             {
-                builder.AllowAnyOrigin()
+                builder.AllowCredentials()
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();
+                    .AllowAnyHeader();
             });
             app.UseEndpoints(endpoints =>
             {
