@@ -70,12 +70,11 @@ namespace Saitynai
             services.AddTransient<DatabaseSeeder, DatabaseSeeder>();
             services.AddCors(options =>
             {
-                options.AddPolicy(MyAllowSpecificOrigins,
-                    builder =>
-
-                            builder.AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials());
+                options.AddDefaultPolicy(builder =>
+                    builder.SetIsOriginAllowed(_ => true)
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
             });
         }
 
@@ -93,7 +92,7 @@ namespace Saitynai
             app.UseAuthentication();
             app.UseAuthorization();
             // Shows UseCors with CorsPolicyBuilder
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
