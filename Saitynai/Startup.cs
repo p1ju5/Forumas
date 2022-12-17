@@ -79,8 +79,13 @@ namespace Saitynai
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("allowAll");
-
+            app.UseCors(builder =>
+                builder
+                    .WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials()
+            );
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
