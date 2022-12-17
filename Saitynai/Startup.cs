@@ -81,7 +81,7 @@ namespace Saitynai
             }
             app.UseCors(builder =>
                 builder
-                    .WithOrigins("http://localhost:4200")
+                    .WithOrigins("http://localhost:3000")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials()
