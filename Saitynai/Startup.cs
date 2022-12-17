@@ -75,6 +75,8 @@ namespace Saitynai
                     {
                         builder.WithOrigins("http://localhost:3000",
                             "https://cheerful-froyo-3ebe83.netlify.app");
+                        builder.WithHeaders("http://localhost:3000",
+                            "https://cheerful-froyo-3ebe83.netlify.app");
                     });
             });
         }
