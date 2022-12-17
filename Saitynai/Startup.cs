@@ -89,7 +89,7 @@ namespace Saitynai
             }
 
             app.UseRouting();
-            app.UseAuthentication();
+           // app.UseAuthentication();
             app.UseAuthorization();
             // Shows UseCors with CorsPolicyBuilder
             app.UseCors();
