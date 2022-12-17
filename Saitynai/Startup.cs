@@ -70,13 +70,13 @@ namespace Saitynai
             services.AddTransient<DatabaseSeeder, DatabaseSeeder>();
             services.AddCors(options =>
             {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
+                options.AddPolicy(MyAllowSpecificOrigins,
                     builder =>
-                    {
                         builder.WithOrigins("http://localhost:3000",
-                            "https://cheerful-froyo-3ebe83.netlify.app");
-                        builder.WithHeaders();
-                    });
+                                "https://cheerful-froyo-3ebe83.netlify.app")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials());
             });
         }
 
