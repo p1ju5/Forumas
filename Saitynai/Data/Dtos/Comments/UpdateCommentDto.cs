@@ -1,4 +1,7 @@
-﻿namespace Saitynai.Data.Dtos.Comments
+﻿using System.ComponentModel.DataAnnotations;
+using System;
+
+namespace Saitynai.Data.Dtos.Comments
 {
-    public record UpdateCommentDto(string Description);
+    public record UpdateCommentDto(int Id, [Required] string Description, DateTime CreatedDate, string UserId);
 }
