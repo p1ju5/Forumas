@@ -85,7 +85,8 @@ namespace Saitynai
             {
                 builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowAnyHeader();
+                    .AllowAnyHeader()
+                    .AllowCredentials();
             });
             app.UseEndpoints(endpoints =>
             {
