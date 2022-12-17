@@ -77,7 +77,7 @@ namespace Saitynai
             app.UseCors(builder =>
                 {
                     builder
-                        .WithOrigins("http://localhost:3000", "https://localhost:3000")
+                        .WithOrigins("http://localhost:3000", "https://localhost:3000", "https://octopus-app-v8qm3.ondigitalocean.app")
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyHeader()
                         .AllowCredentials()
