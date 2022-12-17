@@ -72,9 +72,8 @@ namespace Saitynai
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
                     builder =>
-                        builder.WithOrigins("http://localhost:3000",
-                                "https://cheerful-froyo-3ebe83.netlify.app")
-                            .AllowAnyHeader()
+
+                            builder.AllowAnyHeader()
                             .AllowAnyMethod()
                             .AllowCredentials());
             });
