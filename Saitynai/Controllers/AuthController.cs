@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Saitynai.Auth.Model;
 using Saitynai.Data.Dtos.Auth;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 
 namespace Saitynai.Controllers
 {
@@ -46,7 +47,7 @@ namespace Saitynai.Controllers
             await _userManager.AddToRoleAsync(newUser, UserRoles.User);
             return CreatedAtAction(nameof(Register), _mapper.Map<UserDto>(newUser));
         }
-
+        [DisableCors]
         [HttpPost]
         [Route("login")]
         public async Task<ActionResult> Login(LoginDto loginDto)
