@@ -47,7 +47,7 @@ namespace Saitynai.Controllers
             await _userManager.AddToRoleAsync(newUser, UserRoles.User);
             return CreatedAtAction(nameof(Register), _mapper.Map<UserDto>(newUser));
         }
-        
+        [EnableCors("AllowAllHeaders")]
         [HttpPost]
         [Route("login")]
         public async Task<ActionResult> Login(LoginDto loginDto)

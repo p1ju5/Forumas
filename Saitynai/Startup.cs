@@ -37,7 +37,16 @@ namespace Saitynai
         public void ConfigureServices(IServiceCollection services)
         {
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllHeaders",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<Context>()
                 .AddDefaultTokenProviders();
@@ -79,12 +88,7 @@ namespace Saitynai
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(builder => builder
-                .WithOrigins("http://localhost:3000",
-                    "https://octopus-app-v8qm3.ondigitalocean.app")
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials());
+            app.UseCors("AllowAllHeaders");
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
