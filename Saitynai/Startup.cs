@@ -88,7 +88,11 @@ namespace Saitynai
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors();
+            app.UseCors(x => x
+                .SetIsOriginAllowed(origin => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
