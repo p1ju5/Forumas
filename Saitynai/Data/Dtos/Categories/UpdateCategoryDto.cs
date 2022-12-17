@@ -1,4 +1,6 @@
-﻿namespace Saitynai.Data.Dtos.Categories
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Saitynai.Data.Dtos.Categories
 {
-    public record UpdateCategoryDto(string Name);
+    public record UpdateCategoryDto([Required] string Name);
 }

@@ -3,5 +3,5 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Saitynai.Data.Dtos.Posts
 {
-    public record UpdatePostDto([Required] string Name, [Required] string Description, DateTime CreatedDate, string UserId);
+    public record UpdatePostDto([Required] string Name, [Required] string Description);
 }
