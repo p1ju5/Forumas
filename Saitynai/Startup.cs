@@ -79,16 +79,7 @@ namespace Saitynai
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler(exceptionHandlerApp =>
-                {
-                    exceptionHandlerApp.Run(async context =>
-                    {
-                        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    });
-                });
-            }
+
             app.UseCors(builder =>
                 builder
                     .WithOrigins("http://localhost:3000")
