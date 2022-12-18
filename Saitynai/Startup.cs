@@ -82,7 +82,7 @@ namespace Saitynai
 
             app.UseCors(builder =>
                 builder
-                    .WithOrigins("http://localhost:3000")
+                    .WithOrigins("http://localhost:3000", "https://coruscating-dieffenbachia-b342d7.netlify.app")
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials()
