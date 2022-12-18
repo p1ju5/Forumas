@@ -75,7 +75,7 @@ namespace Saitynai.Controllers
 
             var comment = _mapper.Map<Comment>(commentDto);
             comment.PostId = postId;
-            comment.UserId = User.FindFirst(CustomClaims.UserId).Value;
+            //comment.UserId = User.FindFirst(CustomClaims.UserId).Value;
 
             await _commentsRepository.InsertAsync(comment);
 

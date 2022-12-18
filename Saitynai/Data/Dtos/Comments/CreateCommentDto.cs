@@ -3,5 +3,5 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Saitynai.Data.Dtos.Comments
 {
-    public record CreateCommentDto([Required] string Description);
+    public record CreateCommentDto([Required] string Description, string UserId);
 }
